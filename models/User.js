@@ -21,9 +21,17 @@ const UserSchema= new Schema({
         required:true,
         bcrypt:true
     },
+    roleId:{
+        type:Schema.Types.ObjectId,
+        ref:"Role"
+    },
     profile:{
         type:String,
         required:false
+    },
+    mainId:{
+        type:Schema.Types.ObjectId,
+        
     }
 
 },{

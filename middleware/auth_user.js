@@ -7,12 +7,16 @@ module.exports=auth_user=(req=request,res=response,next)=>{
 
     try {
         const {authorization}=req.headers;
+        const token=authorization.split(" ")[1];
         const private=fs.readFileSync('private.key');
-        const {email,firstname,lastname,_id}=jwt.verify(authorization,private,{algorithms:"RS256"});
+        const {email,role,roleId,_id}=jwt.verify(token,private,{algorithms:"RS256"});
+
         User.where({_id:_id}).findOne().then(data=>{
             if(data){
                 req.email=email;
-                req.user_id=_id;
+                req.user_id=_id;                    
+                req.roleId=roleId;
+                req.role=role;
                 next();
             }else{
                 res.status(401).json({message:"UnAuthorized Token Provided",status:false})
