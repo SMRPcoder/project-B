@@ -25,7 +25,9 @@ AdminRouter.post("/deleteUser",auth_admin,AdminController.deleteUser);
 
 
 // role permission
-AdminRouter.post("")
+AdminRouter.post("/createRolePermission",auth_admin,AdminController.createRolePermission);
+AdminRouter.post("/addPermission",auth_admin,AdminController.addPermission);
+AdminRouter.post("/removePermission",auth_admin,AdminController.removePermission);
 
 
 module.exports=AdminRouter;
