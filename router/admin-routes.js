@@ -9,7 +9,7 @@ AdminRouter.get("/getRolesList",auth_admin,AdminController.viewRolesList);
 AdminRouter.post("/adduser",auth_admin,upload.single("file"),AdminController.addUser);
 
 // view all
-AdminRouter.post("/viewAllEmployee",auth_admin,AdminController.viewAllEmployees);
+AdminRouter.post("/viewAllEmployees",auth_admin,AdminController.viewAllEmployees);
 AdminRouter.post("/viewAllUsers",auth_admin,AdminController.viewAllUsers);
 
 // view single
@@ -21,10 +21,11 @@ AdminRouter.post("/editEmployee",auth_admin,AdminController.editEmployee);
 AdminRouter.post("/editUser",auth_admin,AdminController.editUser);
 
 // delete
-AdminRouter.post("/deleteUser",auth_admin,AdminController.deleteUser)
+AdminRouter.post("/deleteUser",auth_admin,AdminController.deleteUser);
 
 
-
+// role permission
+AdminRouter.post("")
 
 
 module.exports=AdminRouter;
