@@ -26,7 +26,9 @@ app.get("/",(req,res)=>{
     res.status(200).json({message:"hello world",status:true});
 })
 
+app.listen(4000,()=>{
+    console.log("port is running and access by \"http://localhost:3000/\"");
+})
 
 
-
-module.exports=app;
+// module.exports=app;

@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node app.js",
+    "startdev": "nodemon app.js",
+    "build":"npm install",
+    "dev":"nodemon server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
